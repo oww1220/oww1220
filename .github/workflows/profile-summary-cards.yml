@@ -28,13 +28,14 @@ jobs:
 
       - name: Commit generated stats
         run: |
-          if git diff --quiet -- github-stats; then
+          git add github-stats
+
+          if git diff --cached --quiet; then
             echo "No stats changes"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add github-stats
           git commit -m "chore: update actual GitHub stats"
           git push
