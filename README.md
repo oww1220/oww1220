@@ -2,7 +2,11 @@
 
 ### 🌱 GitHub Activity
 
+![](./github-stats/commit-trend.svg)
+
 ![](./github-stats/actual-stats.svg)
 
-![](./github-stats/top-languages-by-repo.svg)
-![](./github-stats/top-languages-by-commit.svg)
+<p align="center">
+  <img src="./github-stats/top-languages-by-repo.svg" width="48%" />
+  <img src="./github-stats/top-languages-by-commit.svg" width="48%" />
+</p>
