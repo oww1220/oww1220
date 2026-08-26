@@ -1,32 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="230" viewBox="0 0 340 230">
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="338" height="228" rx="6" fill="#2e3440" stroke="#eceff4"/>
-    <text x="24" y="36" font-size="20" font-weight="700" fill="#eceff4">Top Languages by Repo</text>
-    <text x="24" y="55" font-size="10" fill="#81a1c1">primary language of repositories containing your commits</text>
+    <rect x="1" y="1" width="338" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
+    <text x="30" y="40" font-size="21" fill="#eceff4">Top Languages by Repo</text>
+
     
-        <text x="24" y="82" font-size="12" fill="#e5e9f0">TypeScript</text>
-        <rect x="112" y="71" width="130" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="71" width="130" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="82" font-size="11" fill="#d8dee9">25 repos</text>
-        <text x="316" y="82" text-anchor="end" font-size="10" fill="#8fbcbb">34.7%</text>
-        <text x="24" y="109" font-size="12" fill="#e5e9f0">HTML</text>
-        <rect x="112" y="98" width="130" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="98" width="62" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="109" font-size="11" fill="#d8dee9">12 repos</text>
-        <text x="316" y="109" text-anchor="end" font-size="10" fill="#8fbcbb">16.7%</text>
-        <text x="24" y="136" font-size="12" fill="#e5e9f0">Vue</text>
-        <rect x="112" y="125" width="130" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="125" width="52" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="136" font-size="11" fill="#d8dee9">10 repos</text>
-        <text x="316" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">13.9%</text>
-        <text x="24" y="163" font-size="12" fill="#e5e9f0">JavaScript</text>
-        <rect x="112" y="152" width="130" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="152" width="31" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="163" font-size="11" fill="#d8dee9">6 repos</text>
-        <text x="316" y="163" text-anchor="end" font-size="10" fill="#8fbcbb">8.3%</text>
-        <text x="24" y="190" font-size="12" fill="#e5e9f0">Other</text>
-        <rect x="112" y="179" width="130" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="179" width="26" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="190" font-size="11" fill="#d8dee9">5 repos</text>
-        <text x="316" y="190" text-anchor="end" font-size="10" fill="#8fbcbb">6.9%</text>
+        <rect x="40" y="66" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
+        <text x="58" y="78" font-size="13" fill="#e5e9f0">TypeScript</text>
+        <text x="158" y="78" text-anchor="end" font-size="11" fill="#d8dee9">25</text>
+        <text x="190" y="78" text-anchor="end" font-size="10" fill="#8fbcbb">34.7%</text>
+        <rect x="40" y="91" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
+        <text x="58" y="103" font-size="13" fill="#e5e9f0">HTML</text>
+        <text x="158" y="103" text-anchor="end" font-size="11" fill="#d8dee9">12</text>
+        <text x="190" y="103" text-anchor="end" font-size="10" fill="#8fbcbb">16.7%</text>
+        <rect x="40" y="116" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
+        <text x="58" y="128" font-size="13" fill="#e5e9f0">Vue</text>
+        <text x="158" y="128" text-anchor="end" font-size="11" fill="#d8dee9">10</text>
+        <text x="190" y="128" text-anchor="end" font-size="10" fill="#8fbcbb">13.9%</text>
+        <rect x="40" y="141" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
+        <text x="58" y="153" font-size="13" fill="#e5e9f0">JavaScript</text>
+        <text x="158" y="153" text-anchor="end" font-size="11" fill="#d8dee9">6</text>
+        <text x="190" y="153" text-anchor="end" font-size="10" fill="#8fbcbb">8.3%</text>
+        <rect x="40" y="166" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
+        <text x="58" y="178" font-size="13" fill="#e5e9f0">Other</text>
+        <text x="158" y="178" text-anchor="end" font-size="11" fill="#d8dee9">5</text>
+        <text x="190" y="178" text-anchor="end" font-size="10" fill="#8fbcbb">6.9%</text>
+
+    <g><path d="M 289.149 154.415 A 60 60 0 0 0 240.000 60.000 L 240.000 85.000 A 35 35 0 0 1 268.670 140.075 Z" fill="#3178c6" stroke="#2e3440" stroke-width="2"/><path d="M 234.771 179.772 A 60 60 0 0 0 289.149 154.415 L 268.670 140.075 A 35 35 0 0 1 236.950 154.867 Z" fill="#e34c26" stroke="#2e3440" stroke-width="2"/><path d="M 190.851 154.415 A 60 60 0 0 0 234.771 179.772 L 236.950 154.867 A 35 35 0 0 1 211.330 140.075 Z" fill="#41b883" stroke="#2e3440" stroke-width="2"/><path d="M 180.228 125.229 A 60 60 0 0 0 190.851 154.415 L 211.330 140.075 A 35 35 0 0 1 205.133 123.050 Z" fill="#f1e05a" stroke="#2e3440" stroke-width="2"/><path d="M 183.618 99.479 A 60 60 0 0 0 180.228 125.229 L 205.133 123.050 A 35 35 0 0 1 207.111 108.029 Z" fill="#8fbcbb" stroke="#2e3440" stroke-width="2"/></g>
+    <text x="240" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">72</text>
+    <text x="240" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">repos</text>
   </svg>
