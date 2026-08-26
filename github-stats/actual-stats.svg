@@ -5,7 +5,7 @@
     <g transform="translate(0,18)">
         <circle cx="38" cy="77" r="6" fill="#8fbcbb"/>
         <text x="55" y="82" font-size="14" fill="#e5e9f0">Actual commits</text>
-        <text x="250" y="82" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">5,646</text>
+        <text x="250" y="82" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">5,648</text>
         <circle cx="38" cy="109" r="6" fill="#8fbcbb"/>
         <text x="55" y="114" font-size="14" fill="#e5e9f0">Repos with commits</text>
         <text x="250" y="114" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">72</text>

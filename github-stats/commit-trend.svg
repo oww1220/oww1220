@@ -1,71 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="280" viewBox="0 0 880 280">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="878" height="248" rx="6" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
+    <rect x="1" y="1" width="878" height="278" rx="6" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
     <text x="30" y="40" font-size="22" fill="#eceff4">oww1220 · Actual Commit Trend</text>
     <text x="30" y="60" font-size="12" fill="#81a1c1">2018–2026 yearly authored commits on accessible repository default branches</text>
     
-        <circle cx="38" cy="95" r="6" fill="#8fbcbb"/>
-        <text x="55" y="100" font-size="14" fill="#e5e9f0">Total actual commits</text>
-        <text x="250" y="100" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">5,646</text>
-        <circle cx="38" cy="129" r="6" fill="#8fbcbb"/>
-        <text x="55" y="134" font-size="14" fill="#e5e9f0">Repositories with commits</text>
-        <text x="250" y="134" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">72</text>
-        <circle cx="38" cy="163" r="6" fill="#8fbcbb"/>
-        <text x="55" y="168" font-size="14" fill="#e5e9f0">Accessible repos scanned</text>
-        <text x="250" y="168" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">74</text>
-    <text x="300" y="38" font-size="13" fill="#e5e9f0">actual commits by year</text>
+        <circle cx="38" cy="103" r="6" fill="#8fbcbb"/>
+        <text x="55" y="108" font-size="14" fill="#e5e9f0">Total actual commits</text>
+        <text x="250" y="108" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">5,648</text>
+        <circle cx="38" cy="139" r="6" fill="#8fbcbb"/>
+        <text x="55" y="144" font-size="14" fill="#e5e9f0">Repositories with commits</text>
+        <text x="250" y="144" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">72</text>
+        <circle cx="38" cy="175" r="6" fill="#8fbcbb"/>
+        <text x="55" y="180" font-size="14" fill="#e5e9f0">Accessible repos scanned</text>
+        <text x="250" y="180" text-anchor="end" font-size="14" font-weight="600" fill="#d8dee9">74</text>
     
-        <line x1="300" y1="206.00" x2="840" y2="206.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="210.00" font-size="11" fill="#d8dee9">0</text>
-        <line x1="300" y1="176.00" x2="840" y2="176.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="180.00" font-size="11" fill="#d8dee9">500</text>
-        <line x1="300" y1="146.00" x2="840" y2="146.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="150.00" font-size="11" fill="#d8dee9">1,000</text>
-        <line x1="300" y1="116.00" x2="840" y2="116.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="120.00" font-size="11" fill="#d8dee9">1,500</text>
-        <line x1="300" y1="86.00" x2="840" y2="86.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="90.00" font-size="11" fill="#d8dee9">2,000</text>
-        <line x1="300" y1="56.00" x2="840" y2="56.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="850" y="60.00" font-size="11" fill="#d8dee9">2,500</text>
-    <line x1="300" y1="206" x2="840" y2="206" stroke="#d8dee9" stroke-width="1"/>
-    <path d="M 300.00 206.00 L 300.00 206.00 L 367.50 198.80 L 435.00 205.46 L 502.50 179.06 L 570.00 117.62 L 637.50 111.56 L 705.00 135.98 L 772.50 191.18 L 840.00 169.58 L 840.00 206.00 Z" fill="#88c0d0" fill-opacity="0.82"/>
-    <path d="M 300.00 206.00 L 367.50 198.80 L 435.00 205.46 L 502.50 179.06 L 570.00 117.62 L 637.50 111.56 L 705.00 135.98 L 772.50 191.18 L 840.00 169.58" fill="none" stroke="#8fbcbb" stroke-width="2.5"/>
+        <line x1="300" y1="232.00" x2="840" y2="232.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="236.00" font-size="11" fill="#d8dee9">0</text>
+        <line x1="300" y1="202.00" x2="840" y2="202.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="206.00" font-size="11" fill="#d8dee9">500</text>
+        <line x1="300" y1="172.00" x2="840" y2="172.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="176.00" font-size="11" fill="#d8dee9">1,000</text>
+        <line x1="300" y1="142.00" x2="840" y2="142.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="146.00" font-size="11" fill="#d8dee9">1,500</text>
+        <line x1="300" y1="112.00" x2="840" y2="112.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="116.00" font-size="11" fill="#d8dee9">2,000</text>
+        <line x1="300" y1="82.00" x2="840" y2="82.00" stroke="#4c566a" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="850" y="86.00" font-size="11" fill="#d8dee9">2,500</text>
+    <line x1="300" y1="232" x2="840" y2="232" stroke="#d8dee9" stroke-width="1"/>
+    <path d="M 300.00 232.00 L 300.00 232.00 L 367.50 224.80 L 435.00 231.46 L 502.50 205.06 L 570.00 143.62 L 637.50 137.56 L 705.00 161.98 L 772.50 217.18 L 840.00 195.46 L 840.00 232.00 Z" fill="#88c0d0" fill-opacity="0.82"/>
+    <path d="M 300.00 232.00 L 367.50 224.80 L 435.00 231.46 L 502.50 205.06 L 570.00 143.62 L 637.50 137.56 L 705.00 161.98 L 772.50 217.18 L 840.00 195.46" fill="none" stroke="#8fbcbb" stroke-width="2.5"/>
     
-      <circle cx="300.00" cy="206.00" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="300.00" cy="232.00" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2018: 0 commits</title>
-      <circle cx="367.50" cy="198.80" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="367.50" cy="224.80" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2019: 120 commits</title>
-      <circle cx="435.00" cy="205.46" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="435.00" cy="231.46" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2020: 9 commits</title>
-      <circle cx="502.50" cy="179.06" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="502.50" cy="205.06" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2021: 449 commits</title>
-      <circle cx="570.00" cy="117.62" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="570.00" cy="143.62" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2022: 1,473 commits</title>
-      <circle cx="637.50" cy="111.56" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="637.50" cy="137.56" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2023: 1,574 commits</title>
-      <circle cx="705.00" cy="135.98" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="705.00" cy="161.98" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2024: 1,167 commits</title>
-      <circle cx="772.50" cy="191.18" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <circle cx="772.50" cy="217.18" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
       <title>2025: 247 commits</title>
-      <circle cx="840.00" cy="169.58" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
-      <title>2026: 607 commits</title>
+      <circle cx="840.00" cy="195.46" r="3.5" fill="#8fbcbb" stroke="#2e3440" stroke-width="1.5"/>
+      <title>2026: 609 commits</title>
     
-      <line x1="300.00" y1="206" x2="300.00" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="300.00" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2018</text>
-      <line x1="367.50" y1="206" x2="367.50" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="367.50" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2019</text>
-      <line x1="435.00" y1="206" x2="435.00" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="435.00" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2020</text>
-      <line x1="502.50" y1="206" x2="502.50" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="502.50" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2021</text>
-      <line x1="570.00" y1="206" x2="570.00" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="570.00" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2022</text>
-      <line x1="637.50" y1="206" x2="637.50" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="637.50" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2023</text>
-      <line x1="705.00" y1="206" x2="705.00" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="705.00" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2024</text>
-      <line x1="772.50" y1="206" x2="772.50" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="772.50" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2025</text>
-      <line x1="840.00" y1="206" x2="840.00" y2="210.00" stroke="#d8dee9" stroke-width="1"/>
-      <text x="840.00" y="226.00" text-anchor="middle" font-size="11" fill="#d8dee9">2026</text>
+      <line x1="300.00" y1="232" x2="300.00" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="300.00" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2018</text>
+      <line x1="367.50" y1="232" x2="367.50" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="367.50" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2019</text>
+      <line x1="435.00" y1="232" x2="435.00" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="435.00" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2020</text>
+      <line x1="502.50" y1="232" x2="502.50" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="502.50" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2021</text>
+      <line x1="570.00" y1="232" x2="570.00" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="570.00" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2022</text>
+      <line x1="637.50" y1="232" x2="637.50" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="637.50" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2023</text>
+      <line x1="705.00" y1="232" x2="705.00" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="705.00" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2024</text>
+      <line x1="772.50" y1="232" x2="772.50" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="772.50" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2025</text>
+      <line x1="840.00" y1="232" x2="840.00" y2="236.00" stroke="#d8dee9" stroke-width="1"/>
+      <text x="840.00" y="252.00" text-anchor="middle" font-size="11" fill="#d8dee9">2026</text>
   </svg>
