@@ -33,25 +33,30 @@ jobs:
           node <<'NODE'
           const { readFile, writeFile } = require('node:fs/promises');
 
-          const files = [
-            'github-stats/top-languages-by-repo.svg',
-            'github-stats/top-languages-by-commit.svg',
-          ];
+          (async () => {
+            const files = [
+              'github-stats/top-languages-by-repo.svg',
+              'github-stats/top-languages-by-commit.svg',
+            ];
 
-          for (const file of files) {
-            let svg = await readFile(file, 'utf8');
-            svg = svg
-              .replace(
-                'width="340" height="200" viewBox="0 0 340 200"',
-                'width="400" height="200" viewBox="0 0 400 200"',
-              )
-              .replace('width="338" height="198"', 'width="398" height="198"')
-              .replace('<g><path', '<g transform="translate(60 0)"><path')
-              .replaceAll('x="240" y="117"', 'x="300" y="117"')
-              .replaceAll('x="240" y="135"', 'x="300" y="135"');
+            for (const file of files) {
+              let svg = await readFile(file, 'utf8');
+              svg = svg
+                .replace(
+                  'width="340" height="200" viewBox="0 0 340 200"',
+                  'width="400" height="200" viewBox="0 0 400 200"',
+                )
+                .replace('width="338" height="198"', 'width="398" height="198"')
+                .replace('<g><path', '<g transform="translate(60 0)"><path')
+                .replaceAll('x="240" y="117"', 'x="300" y="117"')
+                .replaceAll('x="240" y="135"', 'x="300" y="135"');
 
-            await writeFile(file, svg, 'utf8');
-          }
+              await writeFile(file, svg, 'utf8');
+            }
+          })().catch((error) => {
+            console.error(error);
+            process.exit(1);
+          });
           NODE
 
       - name: Commit generated stats
