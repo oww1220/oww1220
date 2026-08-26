@@ -199,9 +199,9 @@ function niceStep(value) {
 
 function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepos, series, startYear, endYear }) {
   const width = 880;
-  const height = 250;
+  const height = 280;
   const chartX = 300;
-  const chartY = 56;
+  const chartY = 82;
   const chartWidth = 540;
   const chartHeight = 150;
   const baselineY = chartY + chartHeight;
@@ -256,7 +256,7 @@ function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepo
     ['Accessible repos scanned', nf.format(accessibleRepos)],
   ]
     .map(([label, value], index) => {
-      const y = 100 + index * 34;
+      const y = 108 + index * 36;
       return `
         <circle cx="38" cy="${y - 5}" r="6" fill="${COLORS.muted}"/>
         <text x="55" y="${y}" font-size="14" fill="${COLORS.text}">${escapeXml(label)}</text>
@@ -270,7 +270,6 @@ function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepo
     <text x="30" y="40" font-size="22" fill="${COLORS.title}">${escapeXml(login)} · Actual Commit Trend</text>
     <text x="30" y="60" font-size="12" fill="${COLORS.subtext}">${startYear}–${endYear} yearly authored commits on accessible repository default branches</text>
     ${summaryItems}
-    <text x="${chartX}" y="38" font-size="13" fill="${COLORS.text}">actual commits by year</text>
     ${guides}
     <line x1="${chartX}" y1="${baselineY}" x2="${chartX + chartWidth}" y2="${baselineY}" stroke="${COLORS.axis}" stroke-width="1"/>
     <path d="${areaPath}" fill="${COLORS.accent}" fill-opacity="0.82"/>
