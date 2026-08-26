@@ -1,32 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
     <rect x="1" y="1" width="398" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
-    <text x="30" y="40" font-size="21" fill="#eceff4">Top Languages by Repo</text>
+    <text x="30" y="40" font-size="21" fill="#eceff4">Languages by Contributed Repo</text>
     
         <rect x="40" y="58" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
         <text x="58" y="70" font-size="13" fill="#e5e9f0">TypeScript</text>
         <text x="158" y="70" text-anchor="end" font-size="11" fill="#d8dee9">25</text>
-        <text x="190" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">34.7%</text>
+        <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">34.7%</text>
         <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
         <text x="58" y="92" font-size="13" fill="#e5e9f0">HTML</text>
         <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">12</text>
-        <text x="190" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">16.7%</text>
+        <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">16.7%</text>
         <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
         <text x="58" y="114" font-size="13" fill="#e5e9f0">Vue</text>
         <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">10</text>
-        <text x="190" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">13.9%</text>
+        <text x="205" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">13.9%</text>
         <rect x="40" y="124" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
         <text x="58" y="136" font-size="13" fill="#e5e9f0">JavaScript</text>
         <text x="158" y="136" text-anchor="end" font-size="11" fill="#d8dee9">6</text>
-        <text x="190" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">8.3%</text>
+        <text x="205" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">8.3%</text>
         <rect x="40" y="146" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
         <text x="58" y="158" font-size="13" fill="#e5e9f0">EJS</text>
         <text x="158" y="158" text-anchor="end" font-size="11" fill="#d8dee9">4</text>
-        <text x="190" y="158" text-anchor="end" font-size="10" fill="#8fbcbb">5.6%</text>
+        <text x="205" y="158" text-anchor="end" font-size="10" fill="#8fbcbb">5.6%</text>
         <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
         <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
         <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">15</text>
-        <text x="190" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">20.8%</text>
+        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">20.8%</text>
     <g transform="translate(60 0)">
     <path
       d="

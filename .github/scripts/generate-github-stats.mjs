@@ -99,7 +99,7 @@ async function countAuthoredCommits(repo, login, options = {}) {
 
   const response = await request(
     `/repos/${encodeURIComponent(repo.owner.login)}/${encodeURIComponent(repo.name)}/commits?${params}`,
-    { allowStatuses: [404, 409, 422] },
+    { allowStatuses: [409] },
   );
 
   if (!response.ok) return 0;
@@ -175,6 +175,18 @@ function polarToCartesian(cx, cy, r, angle) {
 }
 
 function donutSegment(cx, cy, outerR, innerR, startAngle, endAngle, color) {
+  if (endAngle - startAngle >= 360) {
+    return `
+    <circle
+      cx="${cx}"
+      cy="${cy}"
+      r="${(outerR + innerR) / 2}"
+      fill="none"
+      stroke="${color}"
+      stroke-width="${outerR - innerR}"
+    />`;
+  }
+
   const outerStart = polarToCartesian(cx, cy, outerR, endAngle);
   const outerEnd = polarToCartesian(cx, cy, outerR, startAngle);
   const innerStart = polarToCartesian(cx, cy, innerR, endAngle);
@@ -219,7 +231,7 @@ function niceStep(value) {
   return niceFraction * exponent;
 }
 
-function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepos, series, startYear, endYear }) {
+function renderTrendCard({ login, totalCommits, contributedRepos, series, startYear, endYear }) {
   const width = 880;
   const height = 280;
   const chartX = 300;
@@ -273,9 +285,9 @@ function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepo
     .join('');
 
   const summaryItems = [
-    ['Total actual commits', nf.format(totalCommits)],
-    ['Repositories with commits', nf.format(contributedRepos)],
-    ['Accessible repos scanned', nf.format(accessibleRepos)],
+    ['Total authored commits', nf.format(totalCommits)],
+    ['This year', nf.format(series.at(-1)?.count ?? 0)],
+    ['Contributed repositories', nf.format(contributedRepos)],
   ]
     .map(([label, value], index) => {
       const y = 108 + index * 36;
@@ -289,7 +301,7 @@ function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepo
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
     <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="6" fill="${COLORS.bg}" stroke="${COLORS.border}" stroke-width="1"/>
-    <text x="30" y="40" font-size="22" fill="${COLORS.title}">${escapeXml(login)} · Actual Commit Trend</text>
+    <text x="30" y="40" font-size="22" fill="${COLORS.title}">${escapeXml(login)} · Authored Commit Trend</text>
     <text x="30" y="60" font-size="12" fill="${COLORS.subtext}">${startYear}–${endYear} yearly authored commits on accessible repository default branches</text>
     ${summaryItems}
     ${guides}
@@ -337,7 +349,7 @@ function renderDonutLanguageCard({ title, entries, total, centerValue, centerLab
         <rect x="40" y="${y - 12}" width="14" height="14" fill="${LANGUAGE_COLORS[index % LANGUAGE_COLORS.length]}" stroke="${COLORS.bg}"/>
         <text x="58" y="${y}" font-size="13" fill="${COLORS.text}">${escapeXml(language)}</text>
         <text x="158" y="${y}" text-anchor="end" font-size="11" fill="${COLORS.axis}">${escapeXml(nf.format(value))}</text>
-        <text x="190" y="${y}" text-anchor="end" font-size="10" fill="${COLORS.muted}">${percentages[index]}%</text>`;
+        <text x="205" y="${y}" text-anchor="end" font-size="10" fill="${COLORS.muted}">${percentages[index]}%</text>`;
     })
     .join('');
 
@@ -356,6 +368,50 @@ if (isSelfCheck) {
   const entries = topEntriesWithOther(new Map([['A', 6], ['B', 5], ['C', 4], ['D', 3], ['E', 2], ['F', 1], ['Other', 2]]));
   assert.deepEqual(entries, [['A', 6], ['B', 5], ['C', 4], ['D', 3], ['E', 2], ['Other', 3]]);
   assert.deepEqual(formatPercentages(entries, 23), ['26.1', '21.7', '17.4', '13.0', '8.7', '13.1']);
+
+  const singleLanguageCard = renderDonutLanguageCard({
+    title: 'Single language',
+    entries: [['TypeScript', 10]],
+    total: 10,
+    centerValue: '10',
+    centerLabel: 'repos',
+  });
+  assert.match(singleLanguageCard, /<circle[^>]+stroke="#3178c6"/);
+  assert.match(singleLanguageCard, /<text x="205"[^>]*>100\.0%<\/text>/);
+
+  const trendCard = renderTrendCard({
+    login: 'test',
+    totalCommits: 10,
+    contributedRepos: 2,
+    series: [{ year: 2026, count: 3 }],
+    startYear: 2026,
+    endYear: 2026,
+  });
+  assert.match(trendCard, /Authored Commit Trend/);
+  assert.match(trendCard, /Total authored commits/);
+  assert.match(trendCard, /This year/);
+  assert.match(trendCard, />3<\/text>/);
+  assert.match(trendCard, /Contributed repositories/);
+
+  const originalFetch = globalThis.fetch;
+  try {
+    for (const status of [404, 422]) {
+      globalThis.fetch = async () => new Response(null, { status });
+      await assert.rejects(
+        countAuthoredCommits({ default_branch: 'main', owner: { login: 'owner' }, name: 'repo' }, 'test'),
+        /GitHub API request failed/,
+      );
+    }
+
+    globalThis.fetch = async () => new Response(null, { status: 409 });
+    assert.equal(
+      await countAuthoredCommits({ default_branch: 'main', owner: { login: 'owner' }, name: 'repo' }, 'test'),
+      0,
+    );
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
   console.log('Self-check passed');
   process.exit(0);
 }
@@ -416,7 +472,6 @@ await writeFile(
     login: user.login,
     totalCommits,
     contributedRepos: contributed.length,
-    accessibleRepos: repos.length,
     series,
     startYear,
     endYear,
@@ -426,7 +481,7 @@ await writeFile(
 await writeFile(
   `${OUTPUT_DIR}/top-languages-by-repo.svg`,
   renderDonutLanguageCard({
-    title: 'Top Languages by Repo',
+    title: 'Languages by Contributed Repo',
     entries: repoLanguageTop,
     total: repoLanguageTotal,
     centerValue: nf.format(repoLanguageTotal),
@@ -437,7 +492,7 @@ await writeFile(
 await writeFile(
   `${OUTPUT_DIR}/top-languages-by-commit.svg`,
   renderDonutLanguageCard({
-    title: 'Top Languages by Commit',
+    title: 'Commits by Repository Language',
     entries: commitLanguageTop,
     total: commitLanguageTotal,
     centerValue: totalCommits >= 1000 ? `${(totalCommits / 1000).toFixed(2)}K` : nf.format(totalCommits),
