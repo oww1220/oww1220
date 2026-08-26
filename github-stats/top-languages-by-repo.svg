@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="338" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
+    <rect x="1" y="1" width="398" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
     <text x="30" y="40" font-size="21" fill="#eceff4">Top Languages by Repo</text>
     
         <rect x="40" y="66" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
@@ -84,6 +84,6 @@
       stroke="#2e3440"
       stroke-width="2"
     /></g>
-    <text x="240" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">72</text>
-    <text x="240" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">repos</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">72</text>
+    <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">repos</text>
   </svg>

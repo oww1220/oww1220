@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="338" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
+    <rect x="1" y="1" width="398" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
     <text x="30" y="40" font-size="21" fill="#eceff4">Top Languages by Commit</text>
     
         <rect x="40" y="66" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
@@ -26,10 +26,10 @@
     <g>
     <path
       d="
-        M 189.909 153.028
+        M 189.957 153.102
         A 60 60 0 1 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 1 1 210.780 139.267
+        A 35 35 0 1 1 210.808 139.309
         Z
       "
       fill="#3178c6"
@@ -38,10 +38,10 @@
     />
     <path
       d="
-        M 180.003 120.601
-        A 60 60 0 0 0 189.909 153.028
-        L 210.780 139.267
-        A 35 35 0 0 1 205.002 120.350
+        M 180.004 120.701
+        A 60 60 0 0 0 189.957 153.102
+        L 210.808 139.309
+        A 35 35 0 0 1 205.002 120.409
         Z
       "
       fill="#e34c26"
@@ -50,10 +50,10 @@
     />
     <path
       d="
-        M 186.889 92.085
-        A 60 60 0 0 0 180.003 120.601
-        L 205.002 120.350
-        A 35 35 0 0 1 209.019 103.716
+        M 186.838 92.183
+        A 60 60 0 0 0 180.004 120.701
+        L 205.002 120.409
+        A 35 35 0 0 1 208.989 103.773
         Z
       "
       fill="#41b883"
@@ -62,10 +62,10 @@
     />
     <path
       d="
-        M 204.345 71.743
-        A 60 60 0 0 0 186.889 92.085
-        L 209.019 103.716
-        A 35 35 0 0 1 219.201 91.850
+        M 204.249 71.814
+        A 60 60 0 0 0 186.838 92.183
+        L 208.989 103.773
+        A 35 35 0 0 1 219.145 91.892
         Z
       "
       fill="#f1e05a"
@@ -74,16 +74,16 @@
     />
     <path
       d="
-        M 211.908 66.983
-        A 60 60 0 0 0 204.345 71.743
-        L 219.201 91.850
-        A 35 35 0 0 1 223.613 89.073
+        M 211.799 67.041
+        A 60 60 0 0 0 204.249 71.814
+        L 219.145 91.892
+        A 35 35 0 0 1 223.549 89.107
         Z
       "
       fill="#8fbcbb"
       stroke="#2e3440"
       stroke-width="2"
     /></g>
-    <text x="240" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.65K</text>
-    <text x="240" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">commits</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.65K</text>
+    <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">commits</text>
   </svg>
