@@ -1,4 +1,4 @@
-name: GitHub Actual Stats
+name: Update GitHub stats
 
 on:
   push:
@@ -9,55 +9,28 @@ on:
       - .github/scripts/generate-github-stats.mjs
   schedule:
     - cron: "0 18 * * *"
+      timezone: "Asia/Seoul"
   workflow_dispatch:
 
+concurrency:
+  group: update-github-stats
+  cancel-in-progress: false
+
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-    name: generate-actual-github-stats
+    name: Update GitHub stats
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Generate actual GitHub stats
+      - name: Generate GitHub stats
         env:
+          # Fine-grained PAT: Metadata read and Contents read for selected repositories.
           GH_STATS_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
         run: node .github/scripts/generate-github-stats.mjs
-
-      - name: Widen language card spacing
-        run: |
-          node <<'NODE'
-          const { readFile, writeFile } = require('node:fs/promises');
-
-          (async () => {
-            const files = [
-              'github-stats/top-languages-by-repo.svg',
-              'github-stats/top-languages-by-commit.svg',
-            ];
-
-            for (const file of files) {
-              let svg = await readFile(file, 'utf8');
-              svg = svg
-                .replace(
-                  'width="340" height="200" viewBox="0 0 340 200"',
-                  'width="400" height="200" viewBox="0 0 400 200"',
-                )
-                .replace('width="338" height="198"', 'width="398" height="198"')
-                .replace('<g><path', '<g transform="translate(60 0)"><path')
-                .replaceAll('x="240" y="117"', 'x="300" y="117"')
-                .replaceAll('x="240" y="135"', 'x="300" y="135"');
-
-              await writeFile(file, svg, 'utf8');
-            }
-          })().catch((error) => {
-            console.error(error);
-            process.exit(1);
-          });
-          NODE
 
       - name: Commit generated stats
         run: |

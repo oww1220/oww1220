@@ -3,33 +3,37 @@
     <rect x="1" y="1" width="398" height="198" rx="5" fill="#2e3440" stroke="#eceff4" stroke-width="1"/>
     <text x="30" y="40" font-size="21" fill="#eceff4">Top Languages by Repo</text>
     
-        <rect x="40" y="66" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
-        <text x="58" y="78" font-size="13" fill="#e5e9f0">TypeScript</text>
-        <text x="158" y="78" text-anchor="end" font-size="11" fill="#d8dee9">25</text>
-        <text x="190" y="78" text-anchor="end" font-size="10" fill="#8fbcbb">34.7%</text>
-        <rect x="40" y="91" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
-        <text x="58" y="103" font-size="13" fill="#e5e9f0">HTML</text>
-        <text x="158" y="103" text-anchor="end" font-size="11" fill="#d8dee9">12</text>
-        <text x="190" y="103" text-anchor="end" font-size="10" fill="#8fbcbb">16.7%</text>
-        <rect x="40" y="116" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
-        <text x="58" y="128" font-size="13" fill="#e5e9f0">Vue</text>
-        <text x="158" y="128" text-anchor="end" font-size="11" fill="#d8dee9">10</text>
-        <text x="190" y="128" text-anchor="end" font-size="10" fill="#8fbcbb">13.9%</text>
-        <rect x="40" y="141" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
-        <text x="58" y="153" font-size="13" fill="#e5e9f0">JavaScript</text>
-        <text x="158" y="153" text-anchor="end" font-size="11" fill="#d8dee9">6</text>
-        <text x="190" y="153" text-anchor="end" font-size="10" fill="#8fbcbb">8.3%</text>
-        <rect x="40" y="166" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
-        <text x="58" y="178" font-size="13" fill="#e5e9f0">Other</text>
-        <text x="158" y="178" text-anchor="end" font-size="11" fill="#d8dee9">5</text>
-        <text x="190" y="178" text-anchor="end" font-size="10" fill="#8fbcbb">6.9%</text>
-    <g>
+        <rect x="40" y="58" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
+        <text x="58" y="70" font-size="13" fill="#e5e9f0">HTML</text>
+        <text x="158" y="70" text-anchor="end" font-size="11" fill="#d8dee9">29</text>
+        <text x="190" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">25.4%</text>
+        <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
+        <text x="58" y="92" font-size="13" fill="#e5e9f0">TypeScript</text>
+        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">29</text>
+        <text x="190" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">25.4%</text>
+        <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
+        <text x="58" y="114" font-size="13" fill="#e5e9f0">Vue</text>
+        <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">15</text>
+        <text x="190" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">13.2%</text>
+        <rect x="40" y="124" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
+        <text x="58" y="136" font-size="13" fill="#e5e9f0">JavaScript</text>
+        <text x="158" y="136" text-anchor="end" font-size="11" fill="#d8dee9">13</text>
+        <text x="190" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">11.4%</text>
+        <rect x="40" y="146" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
+        <text x="58" y="158" font-size="13" fill="#e5e9f0">SCSS</text>
+        <text x="158" y="158" text-anchor="end" font-size="11" fill="#d8dee9">8</text>
+        <text x="190" y="158" text-anchor="end" font-size="10" fill="#8fbcbb">7.0%</text>
+        <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
+        <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
+        <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">20</text>
+        <text x="190" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">17.6%</text>
+    <g transform="translate(60 0)">
     <path
       d="
-        M 289.149 154.415
+        M 299.977 121.653
         A 60 60 0 0 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 0 1 268.670 140.075
+        A 35 35 0 0 1 274.987 120.964
         Z
       "
       fill="#3178c6"
@@ -38,10 +42,10 @@
     />
     <path
       d="
-        M 234.771 179.772
-        A 60 60 0 0 0 289.149 154.415
-        L 268.670 140.075
-        A 35 35 0 0 1 236.950 154.867
+        M 236.695 179.909
+        A 60 60 0 0 0 299.977 121.653
+        L 274.987 120.964
+        A 35 35 0 0 1 238.072 154.947
         Z
       "
       fill="#e34c26"
@@ -50,10 +54,10 @@
     />
     <path
       d="
-        M 190.851 154.415
-        A 60 60 0 0 0 234.771 179.772
-        L 236.950 154.867
-        A 35 35 0 0 1 211.330 140.075
+        M 193.685 158.143
+        A 60 60 0 0 0 236.695 179.909
+        L 238.072 154.947
+        A 35 35 0 0 1 212.983 142.250
         Z
       "
       fill="#41b883"
@@ -62,10 +66,10 @@
     />
     <path
       d="
-        M 180.228 125.229
-        A 60 60 0 0 0 190.851 154.415
-        L 211.330 140.075
-        A 35 35 0 0 1 205.133 123.050
+        M 180.023 118.347
+        A 60 60 0 0 0 193.685 158.143
+        L 212.983 142.250
+        A 35 35 0 0 1 205.013 119.036
         Z
       "
       fill="#f1e05a"
@@ -74,16 +78,28 @@
     />
     <path
       d="
-        M 183.618 99.479
-        A 60 60 0 0 0 180.228 125.229
-        L 205.133 123.050
-        A 35 35 0 0 1 207.111 108.029
+        M 186.465 92.908
+        A 60 60 0 0 0 180.023 118.347
+        L 205.013 119.036
+        A 35 35 0 0 1 208.771 104.196
         Z
       "
       fill="#8fbcbb"
       stroke="#2e3440"
       stroke-width="2"
+    />
+    <path
+      d="
+        M 240.000 60.000
+        A 60 60 0 0 0 186.465 92.908
+        L 208.771 104.196
+        A 35 35 0 0 1 240.000 85.000
+        Z
+      "
+      fill="#b48ead"
+      stroke="#2e3440"
+      stroke-width="2"
     /></g>
-    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">72</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">114</text>
     <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">repos</text>
   </svg>

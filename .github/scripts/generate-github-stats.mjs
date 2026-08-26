@@ -1,7 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
 
 const token = process.env.GH_STATS_TOKEN;
-if (!token) {
+const isSelfCheck = process.argv.includes('--self-check');
+if (!token && !isSelfCheck) {
   throw new Error('GH_STATS_TOKEN is required');
 }
 
@@ -21,7 +23,6 @@ const nf = new Intl.NumberFormat('en-US');
 
 const COLORS = {
   bg: '#2e3440',
-  panel: '#3b4252',
   border: '#eceff4',
   title: '#eceff4',
   text: '#e5e9f0',
@@ -46,8 +47,9 @@ const LANGUAGE_COLORS = [
 async function request(path, { allowStatuses = [] } = {}) {
   const response = await fetch(`${API}${path}`, { headers });
   if (!response.ok && !allowStatuses.includes(response.status)) {
-    const body = await response.text();
-    throw new Error(`GitHub API ${response.status} ${path}: ${body.slice(0, 500)}`);
+    const requestId = response.headers.get('x-github-request-id');
+    const requestSuffix = requestId ? `, request ${requestId}` : '';
+    throw new Error(`GitHub API request failed (${response.status}${requestSuffix})`);
   }
   return response;
 }
@@ -129,10 +131,30 @@ function increment(map, key, value = 1) {
   map.set(key, (map.get(key) ?? 0) + value);
 }
 
-function topEntries(map, limit = 5) {
-  return [...map.entries()]
+function topEntriesWithOther(map, limit = 5) {
+  const top = [...map.entries()]
+    .filter(([language]) => language !== 'Other')
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, limit);
+
+  const total = [...map.values()].reduce((sum, value) => sum + value, 0);
+  const topTotal = top.reduce((sum, [, value]) => sum + value, 0);
+  if (topTotal < total) top.push(['Other', total - topTotal]);
+
+  return top;
+}
+
+function formatPercentages(entries, total) {
+  let displayedTotal = 0;
+  return entries.map(([, value], index) => {
+    let percentage = 0;
+    if (total > 0) {
+      percentage = Number(((value / total) * 100).toFixed(1));
+      if (index === entries.length - 1) percentage = 100 - displayedTotal;
+    }
+    displayedTotal += percentage;
+    return percentage.toFixed(1);
+  });
 }
 
 function escapeXml(value) {
@@ -279,42 +301,12 @@ function renderTrendCard({ login, totalCommits, contributedRepos, accessibleRepo
   </svg>`;
 }
 
-function renderStats({ login, totalCommits, contributedRepos, accessibleRepos }) {
-  const width = 700;
-  const height = 200;
-  const rows = [
-    ['Actual commits', nf.format(totalCommits)],
-    ['Repos with commits', nf.format(contributedRepos)],
-    ['Accessible repos scanned', nf.format(accessibleRepos)],
-  ]
-    .map(([label, value], index) => {
-      const y = 82 + index * 32;
-      return `
-        <circle cx="38" cy="${y - 5}" r="6" fill="${COLORS.muted}"/>
-        <text x="55" y="${y}" font-size="14" fill="${COLORS.text}">${escapeXml(label)}</text>
-        <text x="250" y="${y}" text-anchor="end" font-size="14" font-weight="600" fill="${COLORS.axis}">${escapeXml(value)}</text>`;
-    })
-    .join('');
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-    <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="698" height="198" rx="5" fill="${COLORS.bg}" stroke="${COLORS.border}" stroke-width="1"/>
-    <text x="30" y="40" font-size="22" fill="${COLORS.title}">${escapeXml(login)} · Actual Git Activity</text>
-    <g transform="translate(0,18)">${rows}</g>
-    <g transform="translate(330,38)">
-      <rect x="0" y="0" width="330" height="126" rx="5" fill="${COLORS.panel}" opacity="0.45"/>
-      <text x="165" y="55" text-anchor="middle" font-size="38" font-weight="700" fill="${COLORS.accent}">${escapeXml((totalCommits >= 1000 ? `${(totalCommits / 1000).toFixed(2)}K` : nf.format(totalCommits)))}</text>
-      <text x="165" y="79" text-anchor="middle" font-size="13" fill="${COLORS.text}">actual authored commits</text>
-      <text x="165" y="101" text-anchor="middle" font-size="11" fill="${COLORS.subtext}">accessible repository default branches</text>
-    </g>
-    <text x="30" y="183" font-size="10" fill="${COLORS.muted}">Private repository names and commit messages are never rendered.</text>
-  </svg>`;
-}
-
 function renderDonutLanguageCard({ title, entries, total, centerValue, centerLabel }) {
-  const width = 340;
+  const width = 400;
   const height = 200;
   const cx = 240;
+  const chartOffsetX = 60;
+  const centerX = cx + chartOffsetX;
   const cy = 120;
   const outerR = 60;
   const innerR = 35;
@@ -337,27 +329,35 @@ function renderDonutLanguageCard({ title, entries, total, centerValue, centerLab
     })
     .join('');
 
+  const percentages = formatPercentages(entries, total);
   const legends = entries
     .map(([language, value], index) => {
-      const y = 78 + index * 25;
-      const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : '0.0';
+      const y = 70 + index * 22;
       return `
         <rect x="40" y="${y - 12}" width="14" height="14" fill="${LANGUAGE_COLORS[index % LANGUAGE_COLORS.length]}" stroke="${COLORS.bg}"/>
         <text x="58" y="${y}" font-size="13" fill="${COLORS.text}">${escapeXml(language)}</text>
         <text x="158" y="${y}" text-anchor="end" font-size="11" fill="${COLORS.axis}">${escapeXml(nf.format(value))}</text>
-        <text x="190" y="${y}" text-anchor="end" font-size="10" fill="${COLORS.muted}">${percentage}%</text>`;
+        <text x="190" y="${y}" text-anchor="end" font-size="10" fill="${COLORS.muted}">${percentages[index]}%</text>`;
     })
     .join('');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="338" height="198" rx="5" fill="${COLORS.bg}" stroke="${COLORS.border}" stroke-width="1"/>
+    <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="5" fill="${COLORS.bg}" stroke="${COLORS.border}" stroke-width="1"/>
     <text x="30" y="40" font-size="21" fill="${COLORS.title}">${escapeXml(title)}</text>
     ${legends}
-    <g>${segments}</g>
-    <text x="${cx}" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="${COLORS.title}">${escapeXml(centerValue)}</text>
-    <text x="${cx}" y="135" text-anchor="middle" font-size="10" fill="${COLORS.subtext}">${escapeXml(centerLabel)}</text>
+    <g transform="translate(${chartOffsetX} 0)">${segments}</g>
+    <text x="${centerX}" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="${COLORS.title}">${escapeXml(centerValue)}</text>
+    <text x="${centerX}" y="135" text-anchor="middle" font-size="10" fill="${COLORS.subtext}">${escapeXml(centerLabel)}</text>
   </svg>`;
+}
+
+if (isSelfCheck) {
+  const entries = topEntriesWithOther(new Map([['A', 6], ['B', 5], ['C', 4], ['D', 3], ['E', 2], ['F', 1], ['Other', 2]]));
+  assert.deepEqual(entries, [['A', 6], ['B', 5], ['C', 4], ['D', 3], ['E', 2], ['Other', 3]]);
+  assert.deepEqual(formatPercentages(entries, 23), ['26.1', '21.7', '17.4', '13.0', '8.7', '13.1']);
+  console.log('Self-check passed');
+  process.exit(0);
 }
 
 const user = await getAuthenticatedUser();
@@ -404,8 +404,8 @@ for (const { repo, total, yearlyCounts } of contributed) {
 }
 
 const series = yearRanges.map((range) => ({ year: range.year, count: yearlyTotals.get(range.year) ?? 0 }));
-const repoLanguageTop = topEntries(repoLanguages);
-const commitLanguageTop = topEntries(commitLanguages);
+const repoLanguageTop = topEntriesWithOther(repoLanguages);
+const commitLanguageTop = topEntriesWithOther(commitLanguages);
 const repoLanguageTotal = [...repoLanguages.values()].reduce((a, b) => a + b, 0);
 const commitLanguageTotal = [...commitLanguages.values()].reduce((a, b) => a + b, 0);
 
@@ -420,16 +420,6 @@ await writeFile(
     series,
     startYear,
     endYear,
-  }),
-  'utf8',
-);
-await writeFile(
-  `${OUTPUT_DIR}/actual-stats.svg`,
-  renderStats({
-    login: user.login,
-    totalCommits,
-    contributedRepos: contributed.length,
-    accessibleRepos: repos.length,
   }),
   'utf8',
 );
