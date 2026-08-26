@@ -10,6 +10,36 @@ const OUTPUT_DIR = 'github-stats';
 const PER_PAGE = 100;
 const CONCURRENCY = 6;
 
+const THEME = {
+  bg: '#2e3440',
+  panel: '#3b4252',
+  border: '#eceff4',
+  title: '#eceff4',
+  text: '#e5e9f0',
+  subtext: '#d8dee9',
+  accent: '#88c0d0',
+  accent2: '#8fbcbb',
+  muted: '#81a1c1',
+};
+
+const LANGUAGE_COLORS = {
+  TypeScript: '#3178c6',
+  HTML: '#e34c26',
+  Vue: '#41b883',
+  JavaScript: '#f1e05a',
+  SCSS: '#c6538c',
+  CSS: '#563d7c',
+  EJS: '#a91e50',
+  Java: '#b07219',
+  Python: '#3572A5',
+  Shell: '#89e051',
+  Kotlin: '#A97BFF',
+  PHP: '#4F5D95',
+  Other: '#8fbcbb',
+};
+
+const FALLBACK_COLORS = ['#88c0d0', '#81a1c1', '#8fbcbb', '#b48ead', '#d08770'];
+
 const headers = {
   Accept: 'application/vnd.github+json',
   Authorization: `Bearer ${token}`,
@@ -117,67 +147,122 @@ function escapeXml(value) {
 
 const nf = new Intl.NumberFormat('en-US');
 
+function compactNumber(value) {
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
+function languageColor(language, index) {
+  return LANGUAGE_COLORS[language] ?? FALLBACK_COLORS[index % FALLBACK_COLORS.length];
+}
+
+function polarToCartesian(cx, cy, radius, angle) {
+  const radians = ((angle - 90) * Math.PI) / 180;
+  return {
+    x: cx + radius * Math.cos(radians),
+    y: cy + radius * Math.sin(radians),
+  };
+}
+
+function donutPath(cx, cy, outerRadius, innerRadius, startAngle, endAngle) {
+  const safeEnd = Math.min(endAngle, startAngle + 359.8);
+  const outerStart = polarToCartesian(cx, cy, outerRadius, safeEnd);
+  const outerEnd = polarToCartesian(cx, cy, outerRadius, startAngle);
+  const innerStart = polarToCartesian(cx, cy, innerRadius, safeEnd);
+  const innerEnd = polarToCartesian(cx, cy, innerRadius, startAngle);
+  const largeArc = safeEnd - startAngle > 180 ? 1 : 0;
+
+  return [
+    `M ${outerStart.x.toFixed(3)} ${outerStart.y.toFixed(3)}`,
+    `A ${outerRadius} ${outerRadius} 0 ${largeArc} 0 ${outerEnd.x.toFixed(3)} ${outerEnd.y.toFixed(3)}`,
+    `L ${innerEnd.x.toFixed(3)} ${innerEnd.y.toFixed(3)}`,
+    `A ${innerRadius} ${innerRadius} 0 ${largeArc} 1 ${innerStart.x.toFixed(3)} ${innerStart.y.toFixed(3)}`,
+    'Z',
+  ].join(' ');
+}
+
 function renderStats({ login, totalCommits, contributedRepos, accessibleRepos }) {
-  const width = 700;
-  const height = 190;
-  const cards = [
+  const rows = [
     ['Actual commits', nf.format(totalCommits)],
     ['Repos with commits', nf.format(contributedRepos)],
     ['Accessible repos scanned', nf.format(accessibleRepos)],
   ];
 
-  const cellWidth = 205;
-  const startX = 30;
-  const gap = 15;
-
-  const cells = cards
-    .map(([label, value], i) => {
-      const x = startX + i * (cellWidth + gap);
+  const rowMarkup = rows
+    .map(([label, value], index) => {
+      const y = 82 + index * 32;
       return `
-        <g transform="translate(${x},70)">
-          <rect width="${cellWidth}" height="70" rx="6" fill="#3b4252"/>
-          <text x="14" y="26" font-size="13" fill="#d8dee9">${escapeXml(label)}</text>
-          <text x="14" y="54" font-size="24" font-weight="700" fill="#88c0d0">${escapeXml(value)}</text>
-        </g>`;
+        <circle cx="38" cy="${y - 5}" r="6" fill="${THEME.accent2}"/>
+        <text x="55" y="${y}" font-size="14" fill="${THEME.text}">${escapeXml(label)}</text>
+        <text x="250" y="${y}" text-anchor="end" font-size="14" font-weight="600" fill="${THEME.subtext}">${escapeXml(value)}</text>`;
     })
     .join('');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="698" height="188" rx="6" fill="#2e3440" stroke="#eceff4"/>
-    <text x="30" y="38" font-size="22" font-weight="700" fill="#eceff4">Actual Git Activity</text>
-    <text x="30" y="57" font-size="11" fill="#81a1c1">authored commits on accessible repository default branches · ${escapeXml(login)}</text>
-    ${cells}
-    <text x="30" y="170" font-size="10" fill="#8fbcbb">Private repository names and commit messages are never rendered.</text>
+    <rect x="1" y="1" width="698" height="198" rx="5" fill="${THEME.bg}" stroke="${THEME.border}" stroke-width="1"/>
+    <text x="30" y="40" font-size="22" fill="${THEME.title}">${escapeXml(login)} · Actual Git Activity</text>
+
+    <g transform="translate(0,18)">
+      ${rowMarkup}
+    </g>
+
+    <g transform="translate(330,38)">
+      <rect x="0" y="0" width="330" height="126" rx="5" fill="${THEME.panel}" opacity="0.45"/>
+      <text x="165" y="55" text-anchor="middle" font-size="38" font-weight="700" fill="${THEME.accent}">${escapeXml(compactNumber(totalCommits))}</text>
+      <text x="165" y="79" text-anchor="middle" font-size="13" fill="${THEME.text}">actual authored commits</text>
+      <text x="165" y="101" text-anchor="middle" font-size="11" fill="${THEME.muted}">accessible repository default branches</text>
+    </g>
+
+    <text x="30" y="183" font-size="10" fill="${THEME.accent2}">Private repository names and commit messages are never rendered.</text>
   </svg>`;
 }
 
-function renderLanguageCard({ title, subtitle, entries, total, unit }) {
+function renderLanguageCard({ title, entries, total, unit }) {
   const width = 340;
-  const height = 230;
-  const max = Math.max(...entries.map(([, value]) => value), 1);
-  const barWidth = 130;
+  const height = 200;
+  const cx = 240;
+  const cy = 120;
+  const outerRadius = 60;
+  const innerRadius = 35;
 
-  const rows = entries
-    .map(([language, value], i) => {
-      const y = 82 + i * 27;
-      const widthValue = Math.max(3, Math.round((value / max) * barWidth));
-      const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : '0.0';
+  let angle = 0;
+  const segments = entries
+    .map(([language, value], index) => {
+      const ratio = total > 0 ? value / total : 0;
+      const next = angle + ratio * 360;
+      const path = donutPath(cx, cy, outerRadius, innerRadius, angle, next);
+      const color = languageColor(language, index);
+      angle = next;
+      return `<path d="${path}" fill="${color}" stroke="${THEME.bg}" stroke-width="2"/>`;
+    })
+    .join('');
+
+  const legend = entries
+    .map(([language, value], index) => {
+      const y = 78 + index * 25;
+      const color = languageColor(language, index);
+      const percent = total > 0 ? ((value / total) * 100).toFixed(1) : '0.0';
       return `
-        <text x="24" y="${y}" font-size="12" fill="#e5e9f0">${escapeXml(language)}</text>
-        <rect x="112" y="${y - 11}" width="${barWidth}" height="10" rx="3" fill="#3b4252"/>
-        <rect x="112" y="${y - 11}" width="${widthValue}" height="10" rx="3" fill="#88c0d0"/>
-        <text x="252" y="${y}" font-size="11" fill="#d8dee9">${escapeXml(nf.format(value))} ${escapeXml(unit)}</text>
-        <text x="316" y="${y}" text-anchor="end" font-size="10" fill="#8fbcbb">${percentage}%</text>`;
+        <rect x="40" y="${y - 12}" width="14" height="14" fill="${color}" stroke="${THEME.bg}"/>
+        <text x="58" y="${y}" font-size="13" fill="${THEME.text}">${escapeXml(language)}</text>
+        <text x="158" y="${y}" text-anchor="end" font-size="11" fill="${THEME.subtext}">${escapeXml(nf.format(value))}</text>
+        <text x="190" y="${y}" text-anchor="end" font-size="10" fill="${THEME.accent2}">${percent}%</text>`;
     })
     .join('');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
-    <rect x="1" y="1" width="338" height="228" rx="6" fill="#2e3440" stroke="#eceff4"/>
-    <text x="24" y="36" font-size="20" font-weight="700" fill="#eceff4">${escapeXml(title)}</text>
-    <text x="24" y="55" font-size="10" fill="#81a1c1">${escapeXml(subtitle)}</text>
-    ${rows}
+    <rect x="1" y="1" width="338" height="198" rx="5" fill="${THEME.bg}" stroke="${THEME.border}" stroke-width="1"/>
+    <text x="30" y="40" font-size="21" fill="${THEME.title}">${escapeXml(title)}</text>
+
+    ${legend}
+
+    <g>${segments}</g>
+    <text x="${cx}" y="${cy - 3}" text-anchor="middle" font-size="16" font-weight="700" fill="${THEME.title}">${escapeXml(compactNumber(total))}</text>
+    <text x="${cx}" y="${cy + 15}" text-anchor="middle" font-size="10" fill="${THEME.muted}">${escapeXml(unit)}</text>
   </svg>`;
 }
 
@@ -226,7 +311,6 @@ await writeFile(
   `${OUTPUT_DIR}/top-languages-by-repo.svg`,
   renderLanguageCard({
     title: 'Top Languages by Repo',
-    subtitle: 'primary language of repositories containing your commits',
     entries: repoLanguageTop,
     total: repoLanguageTotal,
     unit: 'repos',
@@ -237,7 +321,6 @@ await writeFile(
   `${OUTPUT_DIR}/top-languages-by-commit.svg`,
   renderLanguageCard({
     title: 'Top Languages by Commit',
-    subtitle: 'your actual commit count grouped by repository primary language',
     entries: commitLanguageTop,
     total: commitLanguageTotal,
     unit: 'commits',
