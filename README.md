@@ -2,10 +2,10 @@
 
 ### 🌱 GitHub Activity
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=oww1220&theme=nord_dark)
+![](./profile-summary-card-output/nord_dark/0-profile-details.svg)
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=oww1220&theme=nord_dark)
-![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=oww1220&theme=nord_dark&utcOffset=9)
+![](./profile-summary-card-output/nord_dark/3-stats.svg)
+![](./profile-summary-card-output/nord_dark/4-productive-time.svg)
 
 [![GitHub Streak](https://streak-stats.demolab.com/?user=oww1220&theme=tokyonight)](https://git.io/streak-stats)
 
