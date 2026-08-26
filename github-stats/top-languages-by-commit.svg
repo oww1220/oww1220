@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="230" viewBox="0 0 340 230">
+    <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
+    <rect x="1" y="1" width="338" height="228" rx="6" fill="#2e3440" stroke="#eceff4"/>
+    <text x="24" y="36" font-size="20" font-weight="700" fill="#eceff4">Top Languages by Commit</text>
+    <text x="24" y="55" font-size="10" fill="#81a1c1">your actual commit count grouped by repository primary language</text>
+    
+        <text x="24" y="82" font-size="12" fill="#e5e9f0">TypeScript</text>
+        <rect x="112" y="71" width="130" height="10" rx="3" fill="#3b4252"/>
+        <rect x="112" y="71" width="130" height="10" rx="3" fill="#88c0d0"/>
+        <text x="252" y="82" font-size="11" fill="#d8dee9">3,712 commits</text>
+        <text x="316" y="82" text-anchor="end" font-size="10" fill="#8fbcbb">65.8%</text>
+        <text x="24" y="109" font-size="12" fill="#e5e9f0">EJS</text>
+        <rect x="112" y="98" width="130" height="10" rx="3" fill="#3b4252"/>
+        <rect x="112" y="98" width="18" height="10" rx="3" fill="#88c0d0"/>
+        <text x="252" y="109" font-size="11" fill="#d8dee9">515 commits</text>
+        <text x="316" y="109" text-anchor="end" font-size="10" fill="#8fbcbb">9.1%</text>
+        <text x="24" y="136" font-size="12" fill="#e5e9f0">HTML</text>
+        <rect x="112" y="125" width="130" height="10" rx="3" fill="#3b4252"/>
+        <rect x="112" y="125" width="16" height="10" rx="3" fill="#88c0d0"/>
+        <text x="252" y="136" font-size="11" fill="#d8dee9">444 commits</text>
+        <text x="316" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">7.9%</text>
+        <text x="24" y="163" font-size="12" fill="#e5e9f0">Vue</text>
+        <rect x="112" y="152" width="130" height="10" rx="3" fill="#3b4252"/>
+        <rect x="112" y="152" width="14" height="10" rx="3" fill="#88c0d0"/>
+        <text x="252" y="163" font-size="11" fill="#d8dee9">405 commits</text>
+        <text x="316" y="163" text-anchor="end" font-size="10" fill="#8fbcbb">7.2%</text>
+        <text x="24" y="190" font-size="12" fill="#e5e9f0">JavaScript</text>
+        <rect x="112" y="179" width="130" height="10" rx="3" fill="#3b4252"/>
+        <rect x="112" y="179" width="5" height="10" rx="3" fill="#88c0d0"/>
+        <text x="252" y="190" font-size="11" fill="#d8dee9">134 commits</text>
+        <text x="316" y="190" text-anchor="end" font-size="10" fill="#8fbcbb">2.4%</text>
+  </svg>

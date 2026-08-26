@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="190" viewBox="0 0 700 190">
+    <style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}</style>
+    <rect x="1" y="1" width="698" height="188" rx="6" fill="#2e3440" stroke="#eceff4"/>
+    <text x="30" y="38" font-size="22" font-weight="700" fill="#eceff4">Actual Git Activity</text>
+    <text x="30" y="57" font-size="11" fill="#81a1c1">authored commits on accessible repository default branches · oww1220</text>
+    
+        <g transform="translate(30,70)">
+          <rect width="205" height="70" rx="6" fill="#3b4252"/>
+          <text x="14" y="26" font-size="13" fill="#d8dee9">Actual commits</text>
+          <text x="14" y="54" font-size="24" font-weight="700" fill="#88c0d0">5,641</text>
+        </g>
+        <g transform="translate(250,70)">
+          <rect width="205" height="70" rx="6" fill="#3b4252"/>
+          <text x="14" y="26" font-size="13" fill="#d8dee9">Repos with commits</text>
+          <text x="14" y="54" font-size="24" font-weight="700" fill="#88c0d0">72</text>
+        </g>
+        <g transform="translate(470,70)">
+          <rect width="205" height="70" rx="6" fill="#3b4252"/>
+          <text x="14" y="26" font-size="13" fill="#d8dee9">Accessible repos scanned</text>
+          <text x="14" y="54" font-size="24" font-weight="700" fill="#88c0d0">74</text>
+        </g>
+    <text x="30" y="170" font-size="10" fill="#8fbcbb">Private repository names and commit messages are never rendered.</text>
+  </svg>
