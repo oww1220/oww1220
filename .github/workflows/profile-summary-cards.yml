@@ -8,7 +8,7 @@ on:
       - .github/workflows/profile-summary-cards.yml
       - .github/scripts/generate-github-stats.mjs
   schedule:
-    - cron: "0 18 * * *"
+    - cron: "17 18 * * *"
       timezone: "Asia/Seoul"
   workflow_dispatch:
 
