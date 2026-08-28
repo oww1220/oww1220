@@ -10,5 +10,5 @@
 </p>
 
 <p align="center">
-  <sub>Updated daily at 18:00 KST · Counts authored commits on accessible default branches · Language charts use repository primary languages.</sub>
+  <sub>Scheduled daily at 18:17 KST (09:17 UTC) · Counts authored commits on accessible default branches · Language charts use repository primary languages.</sub>
 </p>
