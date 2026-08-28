@@ -10,7 +10,6 @@ on:
   schedule:
     # Temporary schedule to verify GitHub's schedule trigger; restore after the test.
     - cron: "*/5 * * * *"
-      timezone: "Asia/Seoul"
   workflow_dispatch:
 
 concurrency:
