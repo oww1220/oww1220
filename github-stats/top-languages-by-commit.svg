@@ -5,35 +5,35 @@
     
         <rect x="40" y="58" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
         <text x="58" y="70" font-size="13" fill="#e5e9f0">TypeScript</text>
-        <text x="158" y="70" text-anchor="end" font-size="11" fill="#d8dee9">3,713</text>
-        <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">65.7%</text>
+        <text x="158" y="70" text-anchor="end" font-size="11" fill="#d8dee9">3,716</text>
+        <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">65.6%</text>
         <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
         <text x="58" y="92" font-size="13" fill="#e5e9f0">EJS</text>
-        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">515</text>
-        <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">9.1%</text>
+        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">525</text>
+        <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">9.3%</text>
         <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
         <text x="58" y="114" font-size="13" fill="#e5e9f0">HTML</text>
         <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">444</text>
-        <text x="205" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">7.9%</text>
+        <text x="205" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">7.8%</text>
         <rect x="40" y="124" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
         <text x="58" y="136" font-size="13" fill="#e5e9f0">Vue</text>
         <text x="158" y="136" text-anchor="end" font-size="11" fill="#d8dee9">405</text>
-        <text x="205" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">7.2%</text>
+        <text x="205" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">7.1%</text>
         <rect x="40" y="146" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
         <text x="58" y="158" font-size="13" fill="#e5e9f0">JavaScript</text>
         <text x="158" y="158" text-anchor="end" font-size="11" fill="#d8dee9">134</text>
         <text x="205" y="158" text-anchor="end" font-size="10" fill="#8fbcbb">2.4%</text>
         <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
         <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
-        <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">443</text>
-        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.7%</text>
+        <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">444</text>
+        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.8%</text>
     <g transform="translate(60 0)">
     <path
       d="
-        M 190.017 153.192
+        M 190.246 153.534
         A 60 60 0 1 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 1 1 210.843 139.362
+        A 35 35 0 1 1 210.977 139.562
         Z
       "
       fill="#3178c6"
@@ -42,10 +42,10 @@
     />
     <path
       d="
-        M 180.006 120.833
-        A 60 60 0 0 0 190.017 153.192
-        L 210.843 139.362
-        A 35 35 0 0 1 205.003 120.486
+        M 180.004 120.665
+        A 60 60 0 0 0 190.246 153.534
+        L 210.977 139.562
+        A 35 35 0 0 1 205.002 120.388
         Z
       "
       fill="#e34c26"
@@ -54,10 +54,10 @@
     />
     <path
       d="
-        M 186.767 92.319
-        A 60 60 0 0 0 180.006 120.833
-        L 205.003 120.486
-        A 35 35 0 0 1 208.947 103.853
+        M 186.811 92.234
+        A 60 60 0 0 0 180.004 120.665
+        L 205.002 120.388
+        A 35 35 0 0 1 208.973 103.803
         Z
       "
       fill="#41b883"
@@ -66,10 +66,10 @@
     />
     <path
       d="
-        M 204.110 71.918
-        A 60 60 0 0 0 186.767 92.319
-        L 208.947 103.853
-        A 35 35 0 0 1 219.064 91.952
+        M 204.133 71.901
+        A 60 60 0 0 0 186.811 92.234
+        L 208.973 103.803
+        A 35 35 0 0 1 219.078 91.942
         Z
       "
       fill="#f1e05a"
@@ -78,10 +78,10 @@
     />
     <path
       d="
-        M 211.641 67.125
-        A 60 60 0 0 0 204.110 71.918
-        L 219.064 91.952
-        A 35 35 0 0 1 223.457 89.156
+        M 211.647 67.122
+        A 60 60 0 0 0 204.133 71.901
+        L 219.078 91.942
+        A 35 35 0 0 1 223.460 89.155
         Z
       "
       fill="#8fbcbb"
@@ -91,8 +91,8 @@
     <path
       d="
         M 240.000 60.000
-        A 60 60 0 0 0 211.641 67.125
-        L 223.457 89.156
+        A 60 60 0 0 0 211.647 67.122
+        L 223.460 89.155
         A 35 35 0 0 1 240.000 85.000
         Z
       "
@@ -100,6 +100,6 @@
       stroke="#2e3440"
       stroke-width="2"
     /></g>
-    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.65K</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.67K</text>
     <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">commits</text>
   </svg>
