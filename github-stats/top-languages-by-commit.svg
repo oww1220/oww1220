@@ -9,8 +9,8 @@
         <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">63.6%</text>
         <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
         <text x="58" y="92" font-size="13" fill="#e5e9f0">EJS</text>
-        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">702</text>
-        <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">11.9%</text>
+        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">705</text>
+        <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">12.0%</text>
         <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
         <text x="58" y="114" font-size="13" fill="#e5e9f0">HTML</text>
         <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">444</text>
@@ -26,14 +26,14 @@
         <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
         <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
         <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">446</text>
-        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.6%</text>
+        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.5%</text>
     <g transform="translate(60 0)">
     <path
       d="
-        M 194.712 159.358
+        M 194.792 159.449
         A 60 60 0 1 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 1 1 213.582 142.959
+        A 35 35 0 1 1 213.629 143.012
         Z
       "
       fill="#3178c6"
@@ -42,10 +42,10 @@
     />
     <path
       d="
-        M 180.032 118.034
-        A 60 60 0 0 0 194.712 159.358
-        L 213.582 142.959
-        A 35 35 0 0 1 205.019 118.853
+        M 180.034 117.987
+        A 60 60 0 0 0 194.792 159.449
+        L 213.629 143.012
+        A 35 35 0 0 1 205.020 118.826
         Z
       "
       fill="#e34c26"
@@ -54,10 +54,10 @@
     />
     <path
       d="
-        M 187.519 90.918
-        A 60 60 0 0 0 180.032 118.034
-        L 205.019 118.853
-        A 35 35 0 0 1 209.386 103.036
+        M 187.535 90.890
+        A 60 60 0 0 0 180.034 117.987
+        L 205.020 118.826
+        A 35 35 0 0 1 209.395 103.019
         Z
       "
       fill="#41b883"
@@ -66,10 +66,10 @@
     />
     <path
       d="
-        M 205.226 71.104
-        A 60 60 0 0 0 187.519 90.918
-        L 209.386 103.036
-        A 35 35 0 0 1 219.715 91.478
+        M 205.242 71.093
+        A 60 60 0 0 0 187.535 90.890
+        L 209.395 103.019
+        A 35 35 0 0 1 219.724 91.471
         Z
       "
       fill="#f1e05a"
@@ -78,10 +78,10 @@
     />
     <path
       d="
-        M 212.540 66.653
-        A 60 60 0 0 0 205.226 71.104
-        L 219.715 91.478
-        A 35 35 0 0 1 223.982 88.881
+        M 212.553 66.646
+        A 60 60 0 0 0 205.242 71.093
+        L 219.724 91.471
+        A 35 35 0 0 1 223.989 88.877
         Z
       "
       fill="#8fbcbb"
@@ -91,8 +91,8 @@
     <path
       d="
         M 240.000 60.000
-        A 60 60 0 0 0 212.540 66.653
-        L 223.982 88.881
+        A 60 60 0 0 0 212.553 66.646
+        L 223.989 88.877
         A 35 35 0 0 1 240.000 85.000
         Z
       "
@@ -100,6 +100,6 @@
       stroke="#2e3440"
       stroke-width="2"
     /></g>
-    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.89K</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.90K</text>
     <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">commits</text>
   </svg>
