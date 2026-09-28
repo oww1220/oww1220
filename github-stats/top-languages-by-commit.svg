@@ -9,7 +9,7 @@
         <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">63.6%</text>
         <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
         <text x="58" y="92" font-size="13" fill="#e5e9f0">EJS</text>
-        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">720</text>
+        <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">722</text>
         <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">12.1%</text>
         <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
         <text x="58" y="114" font-size="13" fill="#e5e9f0">HTML</text>
@@ -18,7 +18,7 @@
         <rect x="40" y="124" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
         <text x="58" y="136" font-size="13" fill="#e5e9f0">Vue</text>
         <text x="158" y="136" text-anchor="end" font-size="11" fill="#d8dee9">419</text>
-        <text x="205" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">7.1%</text>
+        <text x="205" y="136" text-anchor="end" font-size="10" fill="#8fbcbb">7.0%</text>
         <rect x="40" y="146" width="14" height="14" fill="#8fbcbb" stroke="#2e3440"/>
         <text x="58" y="158" font-size="13" fill="#e5e9f0">JavaScript</text>
         <text x="158" y="158" text-anchor="end" font-size="11" fill="#d8dee9">134</text>
@@ -26,14 +26,14 @@
         <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
         <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
         <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">446</text>
-        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.4%</text>
+        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.5%</text>
     <g transform="translate(60 0)">
     <path
       d="
-        M 194.734 159.383
+        M 194.787 159.444
         A 60 60 0 1 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 1 1 213.595 142.973
+        A 35 35 0 1 1 213.626 143.009
         Z
       "
       fill="#3178c6"
@@ -42,10 +42,10 @@
     />
     <path
       d="
-        M 180.061 117.289
-        A 60 60 0 0 0 194.734 159.383
-        L 213.595 142.973
-        A 35 35 0 0 1 205.036 118.419
+        M 180.063 117.258
+        A 60 60 0 0 0 194.787 159.444
+        L 213.626 143.009
+        A 35 35 0 0 1 205.037 118.401
         Z
       "
       fill="#e34c26"
@@ -54,10 +54,10 @@
     />
     <path
       d="
-        M 187.771 90.468
-        A 60 60 0 0 0 180.061 117.289
-        L 205.036 118.419
-        A 35 35 0 0 1 209.533 102.773
+        M 187.781 90.450
+        A 60 60 0 0 0 180.063 117.258
+        L 205.037 118.401
+        A 35 35 0 0 1 209.539 102.762
         Z
       "
       fill="#41b883"
@@ -66,10 +66,10 @@
     />
     <path
       d="
-        M 205.471 70.931
-        A 60 60 0 0 0 187.771 90.468
-        L 209.533 102.773
-        A 35 35 0 0 1 219.858 91.377
+        M 205.481 70.924
+        A 60 60 0 0 0 187.781 90.450
+        L 209.539 102.762
+        A 35 35 0 0 1 219.864 91.372
         Z
       "
       fill="#f1e05a"
@@ -78,10 +78,10 @@
     />
     <path
       d="
-        M 212.745 66.548
-        A 60 60 0 0 0 205.471 70.931
-        L 219.858 91.377
-        A 35 35 0 0 1 224.101 88.819
+        M 212.754 66.543
+        A 60 60 0 0 0 205.481 70.924
+        L 219.864 91.372
+        A 35 35 0 0 1 224.106 88.817
         Z
       "
       fill="#8fbcbb"
@@ -91,8 +91,8 @@
     <path
       d="
         M 240.000 60.000
-        A 60 60 0 0 0 212.745 66.548
-        L 224.101 88.819
+        A 60 60 0 0 0 212.754 66.543
+        L 224.106 88.817
         A 35 35 0 0 1 240.000 85.000
         Z
       "
@@ -100,6 +100,6 @@
       stroke="#2e3440"
       stroke-width="2"
     /></g>
-    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.94K</text>
+    <text x="300" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#eceff4">5.95K</text>
     <text x="300" y="135" text-anchor="middle" font-size="10" fill="#81a1c1">commits</text>
   </svg>
