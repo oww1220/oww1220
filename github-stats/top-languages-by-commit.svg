@@ -6,14 +6,14 @@
         <rect x="40" y="58" width="14" height="14" fill="#3178c6" stroke="#2e3440"/>
         <text x="58" y="70" font-size="13" fill="#e5e9f0">TypeScript</text>
         <text x="158" y="70" text-anchor="end" font-size="11" fill="#d8dee9">3,855</text>
-        <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">63.5%</text>
+        <text x="205" y="70" text-anchor="end" font-size="10" fill="#8fbcbb">63.4%</text>
         <rect x="40" y="80" width="14" height="14" fill="#e34c26" stroke="#2e3440"/>
         <text x="58" y="92" font-size="13" fill="#e5e9f0">EJS</text>
         <text x="158" y="92" text-anchor="end" font-size="11" fill="#d8dee9">777</text>
         <text x="205" y="92" text-anchor="end" font-size="10" fill="#8fbcbb">12.8%</text>
         <rect x="40" y="102" width="14" height="14" fill="#41b883" stroke="#2e3440"/>
         <text x="58" y="114" font-size="13" fill="#e5e9f0">HTML</text>
-        <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">444</text>
+        <text x="158" y="114" text-anchor="end" font-size="11" fill="#d8dee9">446</text>
         <text x="205" y="114" text-anchor="end" font-size="10" fill="#8fbcbb">7.3%</text>
         <rect x="40" y="124" width="14" height="14" fill="#f1e05a" stroke="#2e3440"/>
         <text x="58" y="136" font-size="13" fill="#e5e9f0">Vue</text>
@@ -26,14 +26,14 @@
         <rect x="40" y="168" width="14" height="14" fill="#b48ead" stroke="#2e3440"/>
         <text x="58" y="180" font-size="13" fill="#e5e9f0">Other</text>
         <text x="158" y="180" text-anchor="end" font-size="11" fill="#d8dee9">446</text>
-        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.3%</text>
+        <text x="205" y="180" text-anchor="end" font-size="10" fill="#8fbcbb">7.4%</text>
     <g transform="translate(60 0)">
     <path
       d="
-        M 195.101 159.801
+        M 195.153 159.860
         A 60 60 0 1 0 240.000 60.000
         L 240.000 85.000
-        A 35 35 0 1 1 213.809 143.217
+        A 35 35 0 1 1 213.840 143.251
         Z
       "
       fill="#3178c6"
@@ -42,10 +42,10 @@
     />
     <path
       d="
-        M 180.184 115.304
-        A 60 60 0 0 0 195.101 159.801
-        L 213.809 143.217
-        A 35 35 0 0 1 205.107 117.261
+        M 180.177 115.398
+        A 60 60 0 0 0 195.153 159.860
+        L 213.840 143.251
+        A 35 35 0 0 1 205.103 117.316
         Z
       "
       fill="#e34c26"
@@ -54,10 +54,10 @@
     />
     <path
       d="
-        M 188.462 89.277
-        A 60 60 0 0 0 180.184 115.304
-        L 205.107 117.261
-        A 35 35 0 0 1 209.936 102.078
+        M 188.473 89.260
+        A 60 60 0 0 0 180.177 115.398
+        L 205.103 117.316
+        A 35 35 0 0 1 209.942 102.068
         Z
       "
       fill="#41b883"
@@ -66,10 +66,10 @@
     />
     <path
       d="
-        M 206.128 70.476
-        A 60 60 0 0 0 188.462 89.277
-        L 209.936 102.078
-        A 35 35 0 0 1 220.241 91.111
+        M 206.137 70.469
+        A 60 60 0 0 0 188.473 89.260
+        L 209.942 102.068
+        A 35 35 0 0 1 220.247 91.107
         Z
       "
       fill="#f1e05a"
@@ -78,10 +78,10 @@
     />
     <path
       d="
-        M 213.294 66.271
-        A 60 60 0 0 0 206.128 70.476
-        L 220.241 91.111
-        A 35 35 0 0 1 224.422 88.658
+        M 213.302 66.267
+        A 60 60 0 0 0 206.137 70.469
+        L 220.247 91.107
+        A 35 35 0 0 1 224.426 88.656
         Z
       "
       fill="#8fbcbb"
@@ -91,8 +91,8 @@
     <path
       d="
         M 240.000 60.000
-        A 60 60 0 0 0 213.294 66.271
-        L 224.422 88.658
+        A 60 60 0 0 0 213.302 66.267
+        L 224.426 88.656
         A 35 35 0 0 1 240.000 85.000
         Z
       "
